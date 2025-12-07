@@ -171,20 +171,20 @@ export default function SettingsScreen() {
       ),
       key: "remote",
     },
-    {
-      component: (
-        <APIConfigSection
-          ref={apiSectionRef}
-          onChanged={markAsChanged}
-          hideDescription={deviceType === "mobile"}
-          onFocus={() => {
-            setCurrentFocusIndex(1);
-            setCurrentSection("api");
-          }}
-        />
-      ),
-      key: "api",
-    },
+//    {
+//      component: (
+//       <APIConfigSection
+//          ref={apiSectionRef}
+//          onChanged={markAsChanged}
+//          hideDescription={deviceType === "mobile"}
+//          onFocus={() => {
+//            setCurrentFocusIndex(1);
+//            setCurrentSection("api");
+//          }}
+//        />
+//      ),
+//      key: "api",
+//    },
     deviceType !== "mobile" && {
       component: (
         <LiveStreamSection
