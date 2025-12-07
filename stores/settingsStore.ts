@@ -31,7 +31,7 @@ interface SettingsState {
 }
 
 export const useSettingsStore = create<SettingsState>((set, get) => ({
-  apiBaseUrl: "https://www.centos.help",
+  apiBaseUrl: "",
   m3uUrl: "",
   liveStreamSources: [],
   remoteInputEnabled: false,
