@@ -1,2 +1,17 @@
 修改./services/api.ts 第79行 public baseURL: string = "个人域名";
 修改./stores/settingsStore.ts  第34行  apiBaseUrl: "个人域名",
+修改./app/settings.tsx   注销174-187行
+     //    {
+//      component: (
+//       <APIConfigSection
+//          ref={apiSectionRef}
+//          onChanged={markAsChanged}
+//          hideDescription={deviceType === "mobile"}
+//          onFocus={() => {
+//            setCurrentFocusIndex(1);
+//            setCurrentSection("api");
+//          }}
+//        />
+//      ),
+//      key: "api",
+//    },
