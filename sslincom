@@ -1,0 +1,2 @@
+修改./services/api.ts 第79行 public baseURL: string = "个人域名";
+修改./stores/settingsStore.ts  第34行  apiBaseUrl: "个人域名",
