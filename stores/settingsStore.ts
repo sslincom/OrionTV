@@ -31,7 +31,7 @@ interface SettingsState {
 }
 
 export const useSettingsStore = create<SettingsState>((set, get) => ({
-  apiBaseUrl: "",
+  apiBaseUrl: "https://www.centos.help",
   m3uUrl: "",
   liveStreamSources: [],
   remoteInputEnabled: false,
@@ -44,18 +44,23 @@ export const useSettingsStore = create<SettingsState>((set, get) => ({
   },
   loadSettings: async () => {
     const settings = await SettingsManager.get();
+    const effectiveApiBaseUrl = settings.apiBaseUrl || get().apiBaseUrl;
     set({
-      apiBaseUrl: settings.apiBaseUrl,
-      m3uUrl: settings.m3uUrl,
+      apiBaseUrl: effectiveApiBaseUrl,
+      m3uUrl: settings.m3uUrl || '',
       remoteInputEnabled: settings.remoteInputEnabled || false,
       videoSource: settings.videoSource || {
         enabledAll: true,
         sources: {},
       },
     });
-    if (settings.apiBaseUrl) {
-      api.setBaseUrl(settings.apiBaseUrl);
-      await get().fetchServerConfig();
+
+    api.setBaseUrl(effectiveApiBaseUrl);
+    await get().fetchServerConfig();
+
+    if (!settings.apiBaseUrl) {
+      await get().saveSettings();
+      logger.info("默认API地址已自动保存到存储:", effectiveApiBaseUrl);
     }
   },
   fetchServerConfig: async () => {
