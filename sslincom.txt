@@ -1,6 +1,6 @@
-修改./services/api.ts 第79行 public baseURL: string = "个人域名";
-修改./stores/settingsStore.ts  第34行  apiBaseUrl: "个人域名",
-修改./app/settings.tsx   注销174-187行
+1、修改./services/api.ts 第79行 public baseURL: string = "个人域名";
+2、修改./stores/settingsStore.ts  第34行  apiBaseUrl: "个人域名",
+3、修改./app/settings.tsx   注销174-187行   // 屏蔽设置选项下api服务器选项
      //    {
 //      component: (
 //       <APIConfigSection
@@ -15,4 +15,6 @@
 //      ),
 //      key: "api",
 //    },
-修改./app/index.tsx  {isLoggedIn && ( 为 {false && (  //调整平板模式下左侧导航栏样式
+4、修改./app/index.tsx  {isLoggedIn && ( 为 {false && (  //屏蔽平板模式下右上角的退出按钮
+5、修改./components/navigation/TabletSidebarNavigator.tsx文件下
+   const [internalCollapsed, setInternalCollapsed] = useState(false);修改为true
