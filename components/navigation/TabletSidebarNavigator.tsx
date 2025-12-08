@@ -37,8 +37,8 @@ const TabletSidebarNavigator: React.FC<TabletSidebarNavigatorProps> = ({
   const router = useRouter();
   const pathname = usePathname();
   const { spacing, isPortrait } = useResponsiveLayout();
-  
-  const [internalCollapsed, setInternalCollapsed] = useState(false);
+  //true在平板模式下折叠左侧导航栏
+  const [internalCollapsed, setInternalCollapsed] = useState(true);
   
   // 使用外部控制的collapsed状态，如果没有则使用内部状态
   const collapsed = controlledCollapsed !== undefined ? controlledCollapsed : internalCollapsed;
