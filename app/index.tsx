@@ -220,7 +220,8 @@ export default function HomeScreen() {
           <StyledButton style={dynamicStyles.iconButton} onPress={() => router.push("/settings")} variant="ghost">
             <Settings color={colorScheme === "dark" ? "white" : "black"} size={24} />
           </StyledButton>
-          {isLoggedIn && (
+          //false 修改为 isLoggedIn 则默认展开平板模式下左侧导航栏
+          {false && (
             <StyledButton style={dynamicStyles.iconButton} onPress={logout} variant="ghost">
               <LogOut color={colorScheme === "dark" ? "white" : "black"} size={24} />
             </StyledButton>
