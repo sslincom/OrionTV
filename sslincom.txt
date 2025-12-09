@@ -15,6 +15,3 @@
 //      ),
 //      key: "api",
 //    },
-4、修改./app/index.tsx  {isLoggedIn && ( 为 {false && (  //屏蔽平板模式下右上角的退出按钮
-5、修改./components/navigation/TabletSidebarNavigator.tsx文件下
-   const [internalCollapsed, setInternalCollapsed] = useState(false);修改为true
