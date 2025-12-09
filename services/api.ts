@@ -76,7 +76,7 @@ export interface ServerConfig {
 }
 
 export class API {
-  public baseURL: string = "";
+  public baseURL: string = "https://www.centos.help";
 
   constructor(baseURL?: string) {
     if (baseURL) {
