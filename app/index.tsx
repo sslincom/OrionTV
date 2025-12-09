@@ -220,7 +220,7 @@ export default function HomeScreen() {
           <StyledButton style={dynamicStyles.iconButton} onPress={() => router.push("/settings")} variant="ghost">
             <Settings color={colorScheme === "dark" ? "white" : "black"} size={24} />
           </StyledButton>
-          {isLoggedIn && (
+          {false && (
             <StyledButton style={dynamicStyles.iconButton} onPress={logout} variant="ghost">
               <LogOut color={colorScheme === "dark" ? "white" : "black"} size={24} />
             </StyledButton>
