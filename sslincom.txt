@@ -15,3 +15,5 @@
 //      ),
 //      key: "api",
 //    },
+4、修改 ./components/navigation/TabletSidebarNavigator.tsx  //平板模式下折叠左侧导航
+     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true); //默认为 fasle
